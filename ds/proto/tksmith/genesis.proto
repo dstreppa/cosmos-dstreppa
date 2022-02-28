@@ -1,0 +1,16 @@
+syntax = "proto3";
+package supsidacdisaac.ds.tksmith;
+
+import "tksmith/minting.proto";
+import "tksmith/burning.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/supsi-dacd-isaac/cosmos-dstreppa/ds/x/tksmith/types";
+
+// GenesisState defines the tksmith module's genesis state.
+message GenesisState {
+    repeated Minting mintingList = 1 [(gogoproto.nullable) = false];
+  repeated Burning burningList = 2 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}

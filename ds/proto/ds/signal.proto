@@ -1,0 +1,14 @@
+syntax = "proto3";
+package supsidacdisaac.ds.ds;
+
+option go_package = "github.com/supsi-dacd-isaac/cosmos-dstreppa/ds/x/ds/types";
+
+
+
+message Signal {
+  string index = 1; 
+  string idx = 2; 
+  int32 value = 3; 
+  string creator = 4;
+}
+

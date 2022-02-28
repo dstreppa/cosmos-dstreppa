@@ -1,0 +1,14 @@
+syntax = "proto3";
+package supsidacdisaac.ds.ds;
+
+import "ds/signal.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/supsi-dacd-isaac/cosmos-dstreppa/ds/x/ds/types";
+
+// GenesisState defines the ds module's genesis state.
+message GenesisState {
+    repeated Signal signalList = 1 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}

@@ -1,0 +1,69 @@
+syntax = "proto3";
+package supsidacdisaac.ds.tksmith;
+
+import "tksmith/minting.proto";
+import "tksmith/burning.proto";
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/supsi-dacd-isaac/cosmos-dstreppa/ds/x/tksmith/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc CreateMinting(MsgCreateMinting) returns (MsgCreateMintingResponse);
+  rpc UpdateMinting(MsgUpdateMinting) returns (MsgUpdateMintingResponse);
+  rpc DeleteMinting(MsgDeleteMinting) returns (MsgDeleteMintingResponse);
+  rpc CreateBurning(MsgCreateBurning) returns (MsgCreateBurningResponse);
+  rpc UpdateBurning(MsgUpdateBurning) returns (MsgUpdateBurningResponse);
+  rpc DeleteBurning(MsgDeleteBurning) returns (MsgDeleteBurningResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgCreateMinting {
+  string creator = 1;
+  string index = 2;
+
+  int32 timestamp = 3;
+  int32 amount = 4;
+}
+message MsgCreateMintingResponse {}
+
+message MsgUpdateMinting {
+  string creator = 1;
+  string index = 2;
+
+  int32 timestamp = 3;
+  int32 amount = 4;
+}
+message MsgUpdateMintingResponse {}
+
+message MsgDeleteMinting {
+  string creator = 1;
+  string index = 2;
+}
+message MsgDeleteMintingResponse {}
+
+message MsgCreateBurning {
+  string creator = 1;
+  string index = 2;
+
+  int32 timestamp = 3;
+  int32 amount = 4;
+}
+message MsgCreateBurningResponse {}
+
+message MsgUpdateBurning {
+  string creator = 1;
+  string index = 2;
+
+  int32 timestamp = 3;
+  int32 amount = 4;
+}
+message MsgUpdateBurningResponse {}
+
+message MsgDeleteBurning {
+  string creator = 1;
+  string index = 2;
+}
+message MsgDeleteBurningResponse {}
+
+// this line is used by starport scaffolding # proto/tx/message

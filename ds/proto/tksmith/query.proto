@@ -1,0 +1,74 @@
+syntax = "proto3";
+package supsidacdisaac.ds.tksmith;
+
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "tksmith/minting.proto";
+import "tksmith/burning.proto";
+// this line is used by starport scaffolding # 1
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/supsi-dacd-isaac/cosmos-dstreppa/ds/x/tksmith/types";
+
+// Query defines the gRPC querier service.
+service Query {
+    // Queries a minting by index.
+	rpc Minting(QueryGetMintingRequest) returns (QueryGetMintingResponse) {
+		option (google.api.http).get = "/supsi-dacd-isaac/ds/tksmith/minting/{index}";
+	}
+
+	// Queries a list of minting items.
+	rpc MintingAll(QueryAllMintingRequest) returns (QueryAllMintingResponse) {
+		option (google.api.http).get = "/supsi-dacd-isaac/ds/tksmith/minting";
+	}
+
+// Queries a burning by index.
+	rpc Burning(QueryGetBurningRequest) returns (QueryGetBurningResponse) {
+		option (google.api.http).get = "/supsi-dacd-isaac/ds/tksmith/burning/{index}";
+	}
+
+	// Queries a list of burning items.
+	rpc BurningAll(QueryAllBurningRequest) returns (QueryAllBurningResponse) {
+		option (google.api.http).get = "/supsi-dacd-isaac/ds/tksmith/burning";
+	}
+
+// this line is used by starport scaffolding # 2
+}
+
+message QueryGetMintingRequest {
+	  string index = 1;
+
+}
+
+message QueryGetMintingResponse {
+	Minting minting = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllMintingRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllMintingResponse {
+	repeated Minting minting = 1 [(gogoproto.nullable) = false];
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryGetBurningRequest {
+	  string index = 1;
+
+}
+
+message QueryGetBurningResponse {
+	Burning burning = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllBurningRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllBurningResponse {
+	repeated Burning burning = 1 [(gogoproto.nullable) = false];
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// this line is used by starport scaffolding # 3

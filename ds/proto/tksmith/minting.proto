@@ -1,0 +1,14 @@
+syntax = "proto3";
+package supsidacdisaac.ds.tksmith;
+
+option go_package = "github.com/supsi-dacd-isaac/cosmos-dstreppa/ds/x/tksmith/types";
+
+
+
+message Minting {
+  string index = 1; 
+  int32 timestamp = 2; 
+  int32 amount = 3; 
+  string creator = 4;
+}
+

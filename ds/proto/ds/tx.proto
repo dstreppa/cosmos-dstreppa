@@ -1,0 +1,41 @@
+syntax = "proto3";
+package supsidacdisaac.ds.ds;
+
+import "ds/signal.proto";
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/supsi-dacd-isaac/cosmos-dstreppa/ds/x/ds/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc CreateSignal(MsgCreateSignal) returns (MsgCreateSignalResponse);
+  rpc UpdateSignal(MsgUpdateSignal) returns (MsgUpdateSignalResponse);
+  rpc DeleteSignal(MsgDeleteSignal) returns (MsgDeleteSignalResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgCreateSignal {
+  string creator = 1;
+  string index = 2;
+
+  string idx = 3;
+  int32 value = 4;
+}
+message MsgCreateSignalResponse {}
+
+message MsgUpdateSignal {
+  string creator = 1;
+  string index = 2;
+
+  string idx = 3;
+  int32 value = 4;
+}
+message MsgUpdateSignalResponse {}
+
+message MsgDeleteSignal {
+  string creator = 1;
+  string index = 2;
+}
+message MsgDeleteSignalResponse {}
+
+// this line is used by starport scaffolding # proto/tx/message
